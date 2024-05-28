@@ -11,8 +11,7 @@ const requireAuth = async (req, res, next) => {
     }
 
     const token = authorization.split(' ')[1] // Bearer Token - Authorization Type (sent in the request's header)
-    console.log('token: ', token)
-
+    
     try {
         const {_id} = jwt.verify(token, process.env.SECRET)
 
